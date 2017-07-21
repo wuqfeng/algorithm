@@ -10,9 +10,7 @@ public class TopologicalOrder {
     public static void main(String[] args) {
         List<Course> cs=constractCourses();
         Graph g=new Graph(cs);
-        for(int i=0;i<g.getVertices().size();i++){
-            System.out.println(g.getVertices().get(i).getCourse().getCode());
-        }
+
     }
 
     public static List<Course> constractCourses() {

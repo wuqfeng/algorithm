@@ -3,6 +3,7 @@ package com.git.algorithm.graph.model;
 public class Edge {
     private Vertex startVertex;
     private Vertex endVertex;
+    private boolean sortStatus =false;
 
     public Edge(Vertex startVertex, Vertex endVertex) {
         this.startVertex = startVertex;
@@ -23,5 +24,13 @@ public class Edge {
 
     public void setEndVertex(Vertex endVertex) {
         this.endVertex = endVertex;
+    }
+
+    public boolean getSortStatus() {
+        return sortStatus;
+    }
+
+    public void setSortStatus(boolean sortStatus) {
+        this.sortStatus = sortStatus;
     }
 }

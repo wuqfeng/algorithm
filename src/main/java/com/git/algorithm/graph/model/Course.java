@@ -1,11 +1,12 @@
 package com.git.algorithm.graph.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course {
     private String name;
     private String code;
-    private List<String> preCourseCode;
+    private List<String> preCourseCode=new ArrayList<>();
 
     public Course(String name, String code, List<String> preCourseCode) {
         this.name = name;

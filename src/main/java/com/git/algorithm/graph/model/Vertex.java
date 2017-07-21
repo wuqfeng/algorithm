@@ -9,6 +9,7 @@ public class Vertex {
     private List<Edge> inEdge;
     private List<Edge> outEdge;
 
+
     public Vertex(Course course) {
         this.course = course;
     }
@@ -42,6 +43,20 @@ public class Vertex {
     public void setOutEdge(List<Edge> outEdge) {
         this.outEdge = outEdge;
     }
+
+    public boolean canSort() {
+        if(inEdge==null||inEdge.size()==0){
+            return true;
+        }
+        for(Edge ie:inEdge){
+            if(!ie.getSortStatus()){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public void addOutEdge(Edge e){
         if(outEdge==null){
             outEdge=new ArrayList<>();
