@@ -31,7 +31,7 @@ public class Graph {
             }
         }
         Iterator<Vertex> its = vs.iterator();
-        topologicalOrder(its);
+        topologicalOrder();
     }
 
     public List<Edge> getEdges() {
@@ -50,8 +50,9 @@ public class Graph {
         this.sortedVertex = sortedVertex;
     }
 
-    public void topologicalOrder(Iterator<Vertex> its) {
+    public void topologicalOrder() {
 
+        Iterator<Vertex> its = vs.iterator();
         while (its.hasNext()) {
             Vertex v = its.next();
             if (v.canSort()) {
@@ -67,6 +68,7 @@ public class Graph {
                 its.remove();
             }
         }
-        topologicalOrder(its);
+
+        topologicalOrder();
     }
 }
