@@ -68,7 +68,8 @@ public class Graph {
                 its.remove();
             }
         }
-
-        topologicalOrder();
+        if (vs.size() > 0) {
+            topologicalOrder();
+        }
     }
 }
