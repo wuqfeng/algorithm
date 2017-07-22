@@ -6,6 +6,9 @@ import com.git.algorithm.graph.linkedTable.Graph;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @see<a href="https://github.com/aragorn-wu/algorithm-book/blob/master/tu/tuo-pu-pai-xu.md">说明文档</a>
+ */
 public class TopologicalOrder {
     public static void main(String[] args) {
         List<Course> cs=constractCourses();
