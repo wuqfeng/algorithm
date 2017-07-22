@@ -1,4 +1,6 @@
-package com.git.algorithm.graph.model;
+package com.git.algorithm.graph.linkedTable;
+
+import com.git.algorithm.graph.model.Course;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,15 +1,18 @@
-package com.git.algorithm.graph.model;
+package com.git.algorithm.graph.linkedTable;
+
+import com.git.algorithm.graph.model.Course;
 
 import java.util.*;
 
 public class Graph {
-    private List<Vertex> vs = new ArrayList<>();
+
     private List<Edge> edges = new ArrayList<>();
     private List<Vertex> sortedVertex = new ArrayList<>();
 
     public Graph(List<Course> courses) {
 
         Map<String, Vertex> vms = new HashMap<>();
+        List<Vertex> vs = new ArrayList<>();
 
         //将course信息放到vertices中
         for (Course course : courses) {
@@ -31,7 +34,7 @@ public class Graph {
             }
         }
         Iterator<Vertex> its = vs.iterator();
-        topologicalOrder();
+        topologicalOrder(vs);
     }
 
     public List<Edge> getEdges() {
@@ -50,7 +53,7 @@ public class Graph {
         this.sortedVertex = sortedVertex;
     }
 
-    public void topologicalOrder() {
+    public void topologicalOrder(List<Vertex> vs) {
 
         Iterator<Vertex> its = vs.iterator();
         while (its.hasNext()) {
@@ -69,7 +72,7 @@ public class Graph {
             }
         }
         if (vs.size() > 0) {
-            topologicalOrder();
+            topologicalOrder(vs);
         }
     }
 }

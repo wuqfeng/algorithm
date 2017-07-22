@@ -1,7 +1,7 @@
 package com.git.algorithm.graph;
 
 import com.git.algorithm.graph.model.Course;
-import com.git.algorithm.graph.model.Graph;
+import com.git.algorithm.graph.linkedTable.Graph;
 
 import java.util.Arrays;
 import java.util.List;
