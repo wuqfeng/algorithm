@@ -1,4 +1,4 @@
-package com.git.algorithm.graph.linkedTable;
+package com.git.wuqf.algorithm.graph.linkedTable;
 
 public class Edge {
     private Vertex startVertex;

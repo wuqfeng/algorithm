@@ -1,6 +1,6 @@
-package com.git.algorithm.graph.linkedTable;
+package com.git.wuqf.algorithm.graph.linkedTable;
 
-import com.git.algorithm.graph.model.Course;
+import com.git.wuqf.algorithm.graph.model.Course;
 
 import java.util.*;
 

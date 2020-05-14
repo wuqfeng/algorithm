@@ -1,7 +1,7 @@
-package com.git.algorithm.graph;
+package com.git.wuqf.algorithm.graph;
 
-import com.git.algorithm.graph.model.Course;
-import com.git.algorithm.graph.linkedTable.Graph;
+import com.git.wuqf.algorithm.graph.model.Course;
+import com.git.wuqf.algorithm.graph.linkedTable.Graph;
 
 import java.util.Arrays;
 import java.util.List;
