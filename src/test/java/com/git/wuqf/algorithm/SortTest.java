@@ -2,6 +2,7 @@ package com.git.wuqf.algorithm;
 
 import com.git.wuqf.algorithm.order.bubble.BubbleSort;
 import com.git.wuqf.algorithm.order.count.CountSort;
+import com.git.wuqf.algorithm.order.selection.SelectionSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -30,6 +31,13 @@ public class SortTest {
     public void testCountSort2() {
         int[] a = {95, 94, 91, 98, 99, 90, 99, 93, 91, 92};
         CountSort c = new CountSort();
+        int[] sortedArray = c.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+    }
+
+    @Test
+    public void testSelectionSort() {
+        SelectionSort c = new SelectionSort();
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
     }
