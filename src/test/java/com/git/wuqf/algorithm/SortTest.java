@@ -3,6 +3,7 @@ package com.git.wuqf.algorithm;
 import com.git.wuqf.algorithm.order.bubble.BubbleSort;
 import com.git.wuqf.algorithm.order.count.CountSort;
 import com.git.wuqf.algorithm.order.insertion.InsertionSort;
+import com.git.wuqf.algorithm.order.merge.MergeSort;
 import com.git.wuqf.algorithm.order.selection.SelectionSort;
 import org.junit.jupiter.api.Test;
 
@@ -46,6 +47,13 @@ public class SortTest {
     @Test
     public void testInsertionSort() {
         InsertionSort c = new InsertionSort();
+        int[] sortedArray = c.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+    }
+
+    @Test
+    public void testMergeSortSort() {
+        MergeSort c = new MergeSort();
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
     }
