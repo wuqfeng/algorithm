@@ -25,4 +25,12 @@ public class SortTest {
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
     }
+
+    @Test
+    public void testCountSort2() {
+        int[] a = {95, 94, 91, 98, 99, 90, 99, 93, 91, 92};
+        CountSort c = new CountSort();
+        int[] sortedArray = c.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+    }
 }
