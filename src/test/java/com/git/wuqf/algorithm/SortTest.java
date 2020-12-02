@@ -4,6 +4,7 @@ import com.git.wuqf.algorithm.order.bubble.BubbleSort;
 import com.git.wuqf.algorithm.order.count.CountSort;
 import com.git.wuqf.algorithm.order.insertion.InsertionSort;
 import com.git.wuqf.algorithm.order.merge.MergeSort;
+import com.git.wuqf.algorithm.order.quick.QuickSort;
 import com.git.wuqf.algorithm.order.selection.SelectionSort;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SortTest {
-    int[] a = {1, 2, 6, 2, 8, 1, 8, 9, 3, 4, 7, 8, 9, 6, 5};
+    int[] a = {4, 1, 6, 2, 8, 1, 8, 9, 3, 4, 7, 8, 9, 6, 5};
 
 
     @Test
@@ -54,6 +55,13 @@ public class SortTest {
     @Test
     public void testMergeSortSort() {
         MergeSort c = new MergeSort();
+        int[] sortedArray = c.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+    }
+
+    @Test
+    public void testQuickSortSort() {
+        QuickSort c = new QuickSort();
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
     }
