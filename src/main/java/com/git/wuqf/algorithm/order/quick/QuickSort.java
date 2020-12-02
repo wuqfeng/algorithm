@@ -18,7 +18,7 @@ public class QuickSort implements Sort {
 
     public void quickSorck(int[] arr, int left, int right) {
         if (left < right) {
-            int partitionIndex = partition(arr, left, right);
+            int partitionIndex = partition2(arr, left, right);
             quickSorck(arr, left, partitionIndex - 1);
             quickSorck(arr, partitionIndex + 1, right);
         }
@@ -38,6 +38,7 @@ public class QuickSort implements Sort {
             swap(arr, i, j);
             print("nswap:", arr);
         }
+        //返回值考虑特殊情况
         if (arr[left] > arr[i]) {
             swap(arr, left, i);
             return i;
@@ -56,5 +57,23 @@ public class QuickSort implements Sort {
         System.out.print(head);
         Arrays.stream(arr).forEach(i -> System.out.print(i + ","));
         System.out.println();
+    }
+
+    private int partition2(int[] arr, int left, int right) {
+        int pivot = arr[left];
+        int i = left;
+        int j = right;
+        while (i < j) {
+            while (arr[j] >= pivot && i < j) {
+                j--;
+            }
+            while (arr[i] <= pivot && i < j) {
+                i++;
+            }
+            swap(arr, i, j);
+            print("nswap:", arr);
+        }
+        swap(arr, left, i);
+        return i;
     }
 }
