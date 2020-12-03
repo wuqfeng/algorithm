@@ -6,6 +6,7 @@ import com.git.wuqf.algorithm.order.insertion.InsertionSort;
 import com.git.wuqf.algorithm.order.merge.MergeSort;
 import com.git.wuqf.algorithm.order.quick.QuickSort;
 import com.git.wuqf.algorithm.order.selection.SelectionSort;
+import com.git.wuqf.algorithm.order.shell.ShellSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -62,6 +63,13 @@ public class SortTest {
     @Test
     public void testQuickSortSort() {
         QuickSort c = new QuickSort();
+        int[] sortedArray = c.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+    }
+
+    @Test
+    public void testShellSortSort() {
+        ShellSort c = new ShellSort();
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
     }
