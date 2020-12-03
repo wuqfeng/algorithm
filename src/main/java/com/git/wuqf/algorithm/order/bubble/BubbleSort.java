@@ -12,6 +12,7 @@ public class BubbleSort implements Sort {
     public int[] sort(int[] arr) {
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
+                System.out.println("index is :" + j + "," + (j + 1) + " . element is :" + arr[j] + "," + arr[j + 1]);
                 if (arr[j] > arr[j + 1]) {
                     int tmp = arr[j + 1];
                     arr[j + 1] = arr[j];

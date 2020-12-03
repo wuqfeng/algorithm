@@ -69,6 +69,7 @@ public class SortTest {
 
     @Test
     public void testShellSortSort() {
+        //int[] a = {5, 7, 8, 3, 1, 2, 4, 6};
         ShellSort c = new ShellSort();
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());

@@ -12,8 +12,11 @@ public class ShellSort implements Sort {
             return arr;
         }
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {//increment表示增量
-            for (int i = gap; i < arr.length; i++) {
-                for (int j = i - gap; j >= 0; j -= gap) {
+            System.out.println("gap is :" + gap);
+            for (int i = 0; i < arr.length - gap; i++) {
+                System.out.println("compare start index is :" + i);
+                for (int j = i; j < arr.length - gap; j += gap) {
+                    System.out.println("swap index is :" + j + "," + (j + gap) + " . element is :" + arr[j] + "," + arr[j + gap]);
                     if (arr[j] > arr[j + gap]) {
                         swap(arr, j, j + gap);
                     }
