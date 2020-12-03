@@ -8,18 +8,18 @@ import com.git.wuqf.algorithm.order.Sort;
 public class ShellSort implements Sort {
     @Override
     public int[] sort(int[] arr) {
-        if (arr == null || arr.length <= 1) {
-            return arr;
-        }
-        for (int gap = arr.length / 2; gap > 0; gap /= 2) {//increment表示增量
+        //增量gap，并逐步缩小增量
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
             System.out.println("gap is :" + gap);
-            for (int i = 0; i < arr.length - gap; i++) {
+            //从第gap个元素，逐个对其所在组进行直接插入排序操作
+            for (int i = gap; i < arr.length; i++) {
                 System.out.println("compare start index is :" + i);
-                for (int j = i; j < arr.length - gap; j += gap) {
-                    System.out.println("swap index is :" + j + "," + (j + gap) + " . element is :" + arr[j] + "," + arr[j + gap]);
-                    if (arr[j] > arr[j + gap]) {
-                        swap(arr, j, j + gap);
-                    }
+                int j = i;
+                while (j - gap >= 0 && arr[j] < arr[j - gap]) {
+                    //插入排序采用交换法
+                    System.out.println("swap index is :" + j + "," + (j - gap) + " . element is :" + arr[j] + "," + arr[j - gap]);
+                    swap(arr, j, j - gap);
+                    j -= gap;
                 }
             }
         }
