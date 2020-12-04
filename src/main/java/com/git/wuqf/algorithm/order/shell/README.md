@@ -3,7 +3,14 @@
 希尔排序基于插入排序，增加了新的特性，提高了插入排序的执行效率。
 
 - 动图演示
-
+  ![](picture/1.jpg '')
+  ![](picture/2.jpg '')
+  ![](picture/3.jpg '')
+  ![](picture/4.jpg '')
+  ![](picture/5.jpg '')
+  ![](picture/6.jpg '')
+  ![](picture/7.jpg '')
+  ![](picture/8.jpg '')
 - 排序过程
 
 - 算法分析
