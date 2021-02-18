@@ -1,6 +1,6 @@
-package com.git.wuqf.algorithm.order.quick;
+package com.git.wuqf.algorithm.sort.quick;
 
-import com.git.wuqf.algorithm.order.Sort;
+import com.git.wuqf.algorithm.sort.Sort;
 
 import java.util.Arrays;
 

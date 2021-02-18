@@ -1,6 +1,6 @@
-package com.git.wuqf.algorithm.order.bubble;
+package com.git.wuqf.algorithm.sort.bubble;
 
-import com.git.wuqf.algorithm.order.Sort;
+import com.git.wuqf.algorithm.sort.Sort;
 
 /**
  * Created by wuqf on 2020/5/14.

@@ -1,4 +1,4 @@
-package com.git.wuqf.algorithm.order;
+package com.git.wuqf.algorithm.sort;
 
 /**
  * Created by wuqf on 2020/5/14.

@@ -1,6 +1,6 @@
-package com.git.wuqf.algorithm.order.insertion;
+package com.git.wuqf.algorithm.sort.insertion;
 
-import com.git.wuqf.algorithm.order.Sort;
+import com.git.wuqf.algorithm.sort.Sort;
 
 /**
  * Created by wuqf on 2020/5/14.

@@ -1,12 +1,12 @@
 package com.git.wuqf.algorithm;
 
-import com.git.wuqf.algorithm.order.bubble.BubbleSort;
-import com.git.wuqf.algorithm.order.count.CountSort;
-import com.git.wuqf.algorithm.order.insertion.InsertionSort;
-import com.git.wuqf.algorithm.order.merge.MergeSort;
-import com.git.wuqf.algorithm.order.quick.QuickSort;
-import com.git.wuqf.algorithm.order.selection.SelectionSort;
-import com.git.wuqf.algorithm.order.shell.ShellSort;
+import com.git.wuqf.algorithm.sort.bubble.BubbleSort;
+import com.git.wuqf.algorithm.sort.count.CountSort;
+import com.git.wuqf.algorithm.sort.insertion.InsertionSort;
+import com.git.wuqf.algorithm.sort.merge.MergeSort;
+import com.git.wuqf.algorithm.sort.quick.QuickSort;
+import com.git.wuqf.algorithm.sort.selection.SelectionSort;
+import com.git.wuqf.algorithm.sort.shell.ShellSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
