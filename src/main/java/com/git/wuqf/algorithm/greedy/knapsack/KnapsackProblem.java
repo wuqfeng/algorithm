@@ -15,7 +15,7 @@ public class KnapsackProblem {
 
     public static void main(String[] args) {
         List<TagObject> os = init();
-        Knapsack knapsack = new ValueFirst();
+        Calculator knapsack = new ValueFirst();
         int maxValue = knapsack.getMaxTotalValue(os,150);
         System.out.println(maxValue);
     }
