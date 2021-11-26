@@ -1,4 +1,4 @@
-package com.git.wuqf.algorithm.utils;
+package com.git.wuqf.utils;
 
 public class ArrayUtils {
     public static void swap(int[] arr, int i, int j) {

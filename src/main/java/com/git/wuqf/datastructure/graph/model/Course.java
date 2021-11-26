@@ -1,4 +1,4 @@
-package com.git.wuqf.algorithm.graph.model;
+package com.git.wuqf.datastructure.graph.model;
 
 import java.util.ArrayList;
 import java.util.List;
