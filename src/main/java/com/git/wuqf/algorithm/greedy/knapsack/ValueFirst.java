@@ -8,12 +8,15 @@ public class ValueFirst implements Calculator {
      * 物品集合
      */
     List<TagObject> obs;
+    /**
+     * 背包
+     */
     Knapsack knapsack;
 
     @Override
     public int getMaxTotalValue(List<TagObject> obs, int capacity) {
         this.obs = obs;
-        knapsack = new Knapsack(capacity);
+        this.knapsack = new Knapsack(capacity);
 
         int maxValue = 0;
         do {
