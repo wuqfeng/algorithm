@@ -4,25 +4,33 @@ import java.util.List;
 
 public class ValueFirst implements Calculator {
 
-    List<TagObject> os;
+    /**
+     * 物品集合
+     */
+    List<TagObject> obs;
+    Knapsack knapsack;
 
     @Override
     public int getMaxTotalValue(List<TagObject> obs, int capacity) {
-        Knapsack knapsack = new Knapsack(capacity);
+        this.obs = obs;
+        knapsack = new Knapsack(capacity);
 
-        for (TagObject t : obs) {
+        int maxValue = 0;
+        do {
+            maxValue = getMaxValue();
+        } while (maxValue > 0);
 
-        }
-        return 0;
+        return knapsack.price;
     }
 
-    public int getMaxValue(List<TagObject> obs, Knapsack knapsack) {
+    private int getMaxValue() {
         int maxValue = 0;
         for (TagObject t : obs) {
-            if (t.status == 0 && t.price > maxValue && t.weight < (knapsack.capacity - knapsack.weight)) {
+            if (t.status == 0 && t.price > maxValue && t.weight <= (knapsack.capacity - knapsack.weight)) {
                 maxValue = t.price;
                 t.status = 1;
-                knapsack
+                knapsack.weight += t.weight;
+                knapsack.price += t.price;
             }
         }
         return maxValue;
