@@ -9,9 +9,7 @@ public class MergeSort implements Sort {
 
     @Override
     public int[] sort(int[] arr) {
-        int len = arr.length;
-
-        mergesort(arr, 0, len - 1);
+        mergesort(arr, 0, arr.length - 1);
         return arr;
     }
 
@@ -20,7 +18,8 @@ public class MergeSort implements Sort {
         if (start >= end) {
             return;
         }
-        int mid = (start + end) / 2;
+        int length = end - start ;
+        int mid = start + (length >> 1);
         mergesort(arr, start, mid);
         mergesort(arr, mid + 1, end);
         merge(arr, start, mid, end);
