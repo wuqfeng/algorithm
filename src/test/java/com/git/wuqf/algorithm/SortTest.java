@@ -55,9 +55,10 @@ public class SortTest {
 
     @Test
     public void testMergeSortSort() {
+        int[] b = {1, 3, 4, 2};
         MergeSort c = new MergeSort();
-        int[] sortedArray = c.sort(a);
-        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+        int[] sortedArray = c.sort(b);
+        assertArrayEquals(sortedArray, Arrays.stream(b).sorted().toArray());
     }
 
     @Test
