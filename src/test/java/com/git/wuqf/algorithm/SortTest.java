@@ -63,10 +63,11 @@ public class SortTest {
 
     @Test
     public void testMergeSortSort() {
-        int[] b = {1, 3, 4, 2};
-        MergeSort c = new MergeSort();
-        int[] sortedArray = c.sort(b);
-        assertArrayEquals(sortedArray, Arrays.stream(b).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        MergeSort mergeSort = new MergeSort();
+        int[] sortedArray = mergeSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
