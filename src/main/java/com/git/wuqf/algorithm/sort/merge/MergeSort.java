@@ -44,7 +44,6 @@ public class MergeSort implements Sort {
         for (int i = start; i <= end; i++) {
             arr[i] = help[i];
         }
-        System.out.printf("xx");
     }
 
     //iteration

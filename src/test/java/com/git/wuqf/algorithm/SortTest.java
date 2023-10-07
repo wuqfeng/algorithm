@@ -63,7 +63,7 @@ public class SortTest {
 
     @Test
     public void testMergeSortSort() {
-        int[] a = generateRandomArray(100, 100);
+        int[] a = generateRandomArray(100000000, 10000000);
         int[] c=copyArr(a);
         MergeSort mergeSort = new MergeSort();
         int[] sortedArray = mergeSort.sort(a);
