@@ -11,6 +11,7 @@ import com.git.wuqf.algorithm.sort.shell.ShellSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -20,9 +21,11 @@ public class SortTest {
 
     @Test
     public void testBubbleSort() {
+        int[] ints = generateRandomArray(100, 100);
+        int[] c=copyArr(ints);
         BubbleSort b = new BubbleSort();
-        int[] s = b.sort(a);
-        assertArrayEquals(s, Arrays.stream(a).sorted().toArray());
+        int[] s = b.sort(ints);
+        assertArrayEquals(s, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
@@ -83,5 +86,26 @@ public class SortTest {
         ShellSort c = new ShellSort();
         int[] sortedArray = c.sort(a);
         assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+    }
+
+    private int[] generateRandomArray(int maxSize, int maxValue) {
+        Random random = new Random();
+        int size = random.nextInt(maxSize + 1);
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = random.nextInt(maxValue + 1);
+        }
+        return arr;
+    }
+
+    private int[] copyArr(int[] arr) {
+        if (arr == null) {
+            return null;
+        }
+        int[] c = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            c[i] = arr[i];
+        }
+        return c;
     }
 }
