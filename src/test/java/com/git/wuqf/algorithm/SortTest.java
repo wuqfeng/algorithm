@@ -16,8 +16,6 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SortTest {
-    int[] a = {4, 1, 6, 2, 8, 1, 8, 9, 3, 4, 7, 8, 9, 6, 5};
-
 
     @Test
     public void testBubbleSort() {
@@ -30,9 +28,11 @@ public class SortTest {
 
     @Test
     public void testCountSort() {
-        CountSort c = new CountSort();
-        int[] sortedArray = c.sort(a);
-        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        CountSort countSort = new CountSort();
+        int[] sortedArray = countSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
@@ -45,16 +45,20 @@ public class SortTest {
 
     @Test
     public void testSelectionSort() {
-        SelectionSort c = new SelectionSort();
-        int[] sortedArray = c.sort(a);
-        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        SelectionSort selectionSort = new SelectionSort();
+        int[] sortedArray = selectionSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
     public void testInsertionSort() {
-        InsertionSort c = new InsertionSort();
-        int[] sortedArray = c.sort(a);
-        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        InsertionSort insertionSort = new InsertionSort();
+        int[] sortedArray = insertionSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
@@ -67,9 +71,11 @@ public class SortTest {
 
     @Test
     public void testQuickSortSort() {
-        QuickSort c = new QuickSort();
-        int[] sortedArray = c.sort(a);
-        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        QuickSort quickSort = new QuickSort();
+        int[] sortedArray = quickSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
@@ -82,10 +88,11 @@ public class SortTest {
 
     @Test
     public void testShellSortSort() {
-        //int[] a = {5, 7, 8, 3, 1, 2, 4, 6};
-        ShellSort c = new ShellSort();
-        int[] sortedArray = c.sort(a);
-        assertArrayEquals(sortedArray, Arrays.stream(a).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        ShellSort shellSort = new ShellSort();
+        int[] sortedArray = shellSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     private int[] generateRandomArray(int maxSize, int maxValue) {
