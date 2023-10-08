@@ -4,46 +4,42 @@ import com.git.wuqf.algorithm.sort.Sort;
 
 public class QuickSort2 implements Sort {
     @Override
-    public int[] sort(int[] nums) {
-        if(nums==null||nums.length==1){
-            return nums;
+    public int[] sort(int[] arr) {
+        if (arr == null || arr.length == 1) {
+            return arr;
         }
-        process(nums,0,nums.length-1);
-        return nums;
+        qsort(arr, 0, arr.length - 1);
+        return arr;
     }
-    public void process(int[] nums,int left,int right){
-        if(left>=right){
+
+    private void qsort(int[] arr, int left, int right) {
+        if (left >= right) {
             return;
         }
-        int[] equalArea=netherlandsFlag(nums, left, right);
-        process(nums,left,equalArea[0]-1);
-        process(nums,equalArea[1]+1,right);
+        int[] equalArea = partation(arr, left, right);
+        qsort(arr, left, equalArea[0] - 1);
+        qsort(arr, equalArea[1], right);
     }
-    public int[] netherlandsFlag(int[] nums,int left,int right){
-        if(left>right){
-            return new int[]{-1,-1};
-        }
-        if(left==right){
-            return new int[]{left,right};
-        }
-        int less=left-1;
-        int more=right;
-        int index=left;
-        while(index<more){
-            if(nums[index]==nums[right]){
-                index++;
-            }
-            else if(nums[index]<nums[right]){
-                swap(nums,index++,++less);
-            }
-            else{
-                swap(nums,index,--more);
+
+    private int[] partation(int[] arr, int left, int right) {
+        int less = left - 1;
+        int idx = left;
+        int more = right;
+        int pivot = arr[right];
+        while (idx < more) {
+            if (arr[idx] < pivot) {
+                swap(arr, ++less, idx++);
+            } else if (arr[idx] == pivot) {
+                idx++;
+            } else {
+                swap(arr, idx, --more);
             }
         }
-        swap(nums,more,right);
-        return new int[]{less+1,more};
+        swap(arr, idx, right);
+        return new int[]{less + 1, idx};
     }
-    public void swap(int[] arr, int i, int j) {
+
+    private void swap(int[] arr, int i, int j) {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;

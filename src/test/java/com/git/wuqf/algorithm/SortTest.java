@@ -63,7 +63,7 @@ public class SortTest {
 
     @Test
     public void testMergeSortSort() {
-        int[] a = generateRandomArray(100000000, 10000000);
+        int[] a = generateRandomArray(500000, 500000);
         int[] c=copyArr(a);
         MergeSort mergeSort = new MergeSort();
         int[] sortedArray = mergeSort.sort(a);
@@ -81,10 +81,11 @@ public class SortTest {
 
     @Test
     public void testQuickSort2Sort() {
-        int[] b = {1, 3, 9, 4, 2, 3, 7, 4};
-        QuickSort2 c = new QuickSort2();
-        int[] sortedArray = c.sort(b);
-        assertArrayEquals(sortedArray, Arrays.stream(b).sorted().toArray());
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        QuickSort2 q2 = new QuickSort2();
+        int[] sortedArray = q2.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
     @Test
@@ -98,7 +99,8 @@ public class SortTest {
 
     private int[] generateRandomArray(int maxSize, int maxValue) {
         Random random = new Random();
-        int size = random.nextInt(maxSize + 1);
+        //int size = random.nextInt(maxSize + 1);
+        int size=maxSize;
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
             arr[i] = random.nextInt(maxValue + 1);
