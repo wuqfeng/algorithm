@@ -18,7 +18,7 @@ public class QuickSort2 implements Sort {
         }
         int[] equalArea = partation(arr, left, right);
         qsort(arr, left, equalArea[0] - 1);
-        qsort(arr, equalArea[1], right);
+        qsort(arr, equalArea[1] + 1, right);
     }
 
     private int[] partation(int[] arr, int left, int right) {
