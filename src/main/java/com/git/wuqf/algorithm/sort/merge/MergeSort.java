@@ -8,9 +8,10 @@ import com.git.wuqf.algorithm.sort.Sort;
 public class MergeSort implements Sort {
 
     int[] help;
+
     @Override
     public int[] sort(int[] arr) {
-        help= new int[arr.length];
+        help = new int[arr.length];
         mergesort(arr, 0, arr.length - 1);
         return arr;
     }
@@ -20,31 +21,31 @@ public class MergeSort implements Sort {
         if (start >= end) {
             return;
         }
-        int length = end - start ;
-        int mid = start + (length >> 1);
-        mergesort(arr, start, mid);
-        mergesort(arr, mid + 1, end);
+        int mid = start + (end - start) / 2;
+        int lend = mid, rstart = mid + 1;
+        mergesort(arr, start, lend);
+        mergesort(arr, rstart, end);
         merge(arr, start, mid, end);
     }
 
-    public void merge(int[] arr, int start, int mid, int end) {
-        int lstart = start;
-        int rstart = mid + 1;
-
-        int k = start;
-        while (lstart <= mid && rstart <= end) {
-            help[k++] = arr[lstart] < arr[rstart] ? arr[lstart++] : arr[rstart++];
+    private void merge(int[] arr, int start, int mid, int end) {
+        int cur = start;
+        int lcur = start;
+        int rcur = mid + 1;
+        while ((lcur <= mid) && (rcur <= end)) {
+            help[cur++] = arr[lcur] < arr[rcur] ? arr[lcur++] : arr[rcur++];
         }
-        while (lstart <= mid) {
-            help[k++] = arr[lstart++];
+        while (lcur <= mid) {
+            help[cur++] = arr[lcur++];
         }
-        while (rstart <= end) {
-            help[k++] = arr[rstart++];
+        while (rcur <= end) {
+            help[cur++] = arr[rcur++];
         }
         for (int i = start; i <= end; i++) {
-            arr[i] = help[i];
+            arr[i]=help[i];
         }
     }
+
 
     //iteration
     public void iterationMergeSort(int[] arr, int[] result, int start, int end) {
