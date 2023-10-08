@@ -26,20 +26,19 @@ public class QuickSort implements Sort {
 
     private int partition(int[] arr, int left, int right) {
         int pivot = arr[left];
-        int i = left;
-        int j = right;
-        while (i < j) {
-            while (arr[j] >= pivot && i < j) {
-                j--;
+        int lidx = left;
+        int ridx = right;
+        while (lidx < ridx) {
+            while (arr[ridx] >= pivot && lidx < ridx) {
+                ridx--;
             }
-            while (arr[i] <= pivot && i < j) {
-                i++;
+            while (arr[lidx] <= pivot && lidx < ridx) {
+                lidx++;
             }
-            swap(arr, i, j);
-            print("nswap:", arr);
+            swap(arr, lidx, ridx);
         }
-        swap(arr, left, i);
-        return i;
+        swap(arr, left, lidx);
+        return lidx;
     }
     private void swap(int[] arr, int i, int j) {
         int temp = arr[i];
