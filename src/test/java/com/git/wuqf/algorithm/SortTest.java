@@ -2,6 +2,7 @@ package com.git.wuqf.algorithm;
 
 import com.git.wuqf.algorithm.sort.bubble.BubbleSort;
 import com.git.wuqf.algorithm.sort.count.CountSort;
+import com.git.wuqf.algorithm.sort.heap.HeapSort;
 import com.git.wuqf.algorithm.sort.insertion.InsertionSort;
 import com.git.wuqf.algorithm.sort.merge.MergeSort;
 import com.git.wuqf.algorithm.sort.quick.QuickSort;
@@ -97,6 +98,14 @@ public class SortTest {
         assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
     }
 
+    @Test
+    public void testHeapSort(){
+        int[] a = generateRandomArray(100, 100);
+        int[] c=copyArr(a);
+        HeapSort heapSort =new HeapSort();
+        int[] sortedArray = heapSort.sort(a);
+        assertArrayEquals(sortedArray, Arrays.stream(c).sorted().toArray());
+    }
     private int[] generateRandomArray(int maxSize, int maxValue) {
         Random random = new Random();
         //int size = random.nextInt(maxSize + 1);
