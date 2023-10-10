@@ -44,8 +44,8 @@ public class Knapsack {
             for (int rest = 0; rest < col; rest++) {
                 int p1 = dp[index + 1][rest];
                 int p2 = 0;
-                if (rest - w[index] >= 0) {
-                    int next = dp[index + 1][rest - w[index]];
+                int next = (rest - w[index]) < 0 ? -1 : dp[index + 1][rest - w[index]];
+                if (next != -1) {
                     p2 = v[index] + next;
                 }
                 dp[index][rest] = Math.max(p1, p2);
